@@ -76,16 +76,4 @@ datos = {
     }
 }
 
-# Guardar los archivos CSV y registrar rutas
-file_links = {}
-for name, content in datos.items():
-    df = pd.DataFrame(content)
-    filename = f"{name}.csv"
-    path = os.path.join(output_dir, filename)
-    df.to_csv(path, index=False)
-    file_links[name] = path
-
-# Mostrar rutas generadas
-for name, path in file_links.items():
-    print(f"{name}: {path}")
 
